@@ -23,6 +23,12 @@ app.post("http://20.244.56.144/evaluation-service/auth" ,(req,res)=>{
     const {email,name , rollno,acesscode,clientId,clientSecret}=req.body;
     return res.status(200).json({token_type:"bearer",acess_token:"", expires_in:""})
 })
+//log api post
+app.post("http://20.244.56.144/evaluation-service/logs" ,(req,res)=>{
+    const {stack,level , package,message}=req.body;
+    return res.status(200).json({logId:"",message:"log created succesfully"})
+})
+
 //get request for shorturl
 app.get("/:shortcode",(req,res)=>{
         const {shortcode}=req.params;
